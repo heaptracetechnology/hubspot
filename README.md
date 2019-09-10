@@ -38,7 +38,7 @@ Curious to [learn more](https://docs.storyscript.io/)?
 
 ##### Create Or Update Contact:
 ```shell
-$ omg run createOrUpdate -a email=<CONTACT_EMAIUL_ADDRESS> -a properties=<MAPPED_CONTACT_PROPERTIES> -e API_KEY=<API_KEY>
+$ omg run createOrUpdate -a email=<CONTACT_EMAIL_ADDRESS> -a properties=<MAPPED_CONTACT_PROPERTIES> -e API_KEY=<API_KEY>
 ```
 ##### Get Contact:
 ```shell
