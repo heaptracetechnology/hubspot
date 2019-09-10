@@ -15,27 +15,6 @@ func getAPIKey() string {
 	return os.Getenv("API_KEY")
 }
 
-//Property struct
-type Property struct {
-	Property string      `json:"property"`
-	Value    interface{} `json:"value"`
-}
-
-//Arguments struct
-type Arguments struct {
-	Email      string     `json:"email,omitempty"`
-	Properties []Property `json:"properties,omitempty"`
-	//DealProperties []hubspotDeal.PropertyDeal `json:"properties,omitempty"`
-	ID int `json:"id,omitempty"`
-}
-
-//Message struct
-type Message struct {
-	Success    bool   `json:"success"`
-	Message    string `json:"message"`
-	StatusCode int    `json:"statusCode"`
-}
-
 //CreateOrUpdateContact Hubspot
 func CreateOrUpdateContact(responseWriter http.ResponseWriter, request *http.Request) {
 
@@ -104,7 +83,7 @@ func DeleteContactByVID(responseWriter http.ResponseWriter, request *http.Reques
 	}
 
 	vid := fmt.Sprint(param["vid"])
-	fmt.Println("vid :::", param["vid"])
+
 	// Create client
 	client := &http.Client{}
 
@@ -123,9 +102,6 @@ func DeleteContactByVID(responseWriter http.ResponseWriter, request *http.Reques
 	if err == nil {
 		fmt.Println(err)
 	}
-
-	fmt.Println("string(body) ::::", body)
-	fmt.Println("string(body) ::::", string(body))
 
 	result.WriteJsonResponse(responseWriter, body, http.StatusOK)
 }

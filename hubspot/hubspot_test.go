@@ -17,7 +17,7 @@ var (
 
 var _ = Describe("Create or update contact with invalid json input ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"status":false}`)
 	requestBody := new(bytes.Buffer)
@@ -45,7 +45,7 @@ var _ = Describe("Create or update contact with invalid json input ", func() {
 
 var _ = Describe("Create or update contact with all required param ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"email":"demot636@gmail.com","properties":{"properties":[{"property":"phone","value":"7894561230"},{"property":"firstname","value":"Nitin"},{"property":"lastname","value":"Patil"}]}}`)
 
@@ -68,7 +68,7 @@ var _ = Describe("Create or update contact with all required param ", func() {
 
 var _ = Describe("Get contact with all required param ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"status":false}`)
 	requestBody := new(bytes.Buffer)
@@ -96,7 +96,7 @@ var _ = Describe("Get contact with all required param ", func() {
 
 var _ = Describe("Get contact with all required param ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"vid":"651"}`)
 
@@ -119,7 +119,7 @@ var _ = Describe("Get contact with all required param ", func() {
 
 var _ = Describe("Delete contact with invalid param ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"status":false}`)
 	requestBody := new(bytes.Buffer)
@@ -147,7 +147,7 @@ var _ = Describe("Delete contact with invalid param ", func() {
 
 var _ = Describe("Delete contact with all required param ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"vid":"651"}`)
 
@@ -170,7 +170,7 @@ var _ = Describe("Delete contact with all required param ", func() {
 
 var _ = Describe("Create deal with invalid json input ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"status":false}`)
 	requestBody := new(bytes.Buffer)
@@ -198,7 +198,7 @@ var _ = Describe("Create deal with invalid json input ", func() {
 
 var _ = Describe("Create deal with all required param ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"associations": {"associatedVids":[601]},"properties": [{"value": "Tims Newer Deal","name": "dealname"},{"value": "appointmentscheduled","name": "dealstage"},{"value": "default","name": "pipeline"},{"value": 1409443200000,"name": "closedate"},{"value": "60000","name": "amount"},{"value": "newbusiness","name": "dealtype"}]}`)
 
@@ -221,7 +221,7 @@ var _ = Describe("Create deal with all required param ", func() {
 
 var _ = Describe("Create ticket with invalid json input ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"status":false}`)
 	requestBody := new(bytes.Buffer)
@@ -249,7 +249,7 @@ var _ = Describe("Create ticket with invalid json input ", func() {
 
 var _ = Describe("Create ticket with all required param ", func() {
 
-	os.Setenv("API_KEY", "66c43350-eb29-4ed9-b160-3e16611de672")
+	os.Setenv("API_KEY", apiKey)
 
 	hubspot := []byte(`{"ticketProperties":[{"name": "subject","value": "This is an example ticket"},{"name": "content","value": "Here are the details of the ticket."},{"name": "hs_pipeline","value": "0"},{"name": "hs_pipeline_stage","value": "1"}]}`)
 
