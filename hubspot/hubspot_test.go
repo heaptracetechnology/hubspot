@@ -12,9 +12,7 @@ import (
 )
 
 var (
-	apiKey     = os.Getenv("HUBSPOT_API_KEY")
-	apiSecret  = os.Getenv("GODADDY_API_SECRET")
-	domainName = os.Getenv("GODADDY_DOMAIN_NAME")
+	apiKey = os.Getenv("HUBSPOT_API_KEY")
 )
 
 var _ = Describe("Create or update contact with invalid json input ", func() {
