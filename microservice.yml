@@ -1,0 +1,106 @@
+omg: 1
+lifecycle:
+  startup:
+    command: ["hubspot"]
+info:
+  version: 1.0.0
+  title: Hubspot
+  description: This is a Hubspot service.
+  contact:
+    name: Rohit Shetty
+    url: https://github.com/ht68rohit
+    email: rohits@heaptrace.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+actions:
+  createOrUpdate:
+    help: Create or update contact in hubspot.
+    http:
+      port: 3000
+      method: post
+      path: /createOrUpdate
+      contentType: application/json
+    arguments:
+      email: 
+        type: string
+        in: requestBody
+        required: true
+        help: Provide email address of contact.
+      properties: 
+        type: map
+        in: requestBody
+        required: true
+        help: Provide all the properties of contact.
+    output:
+      type: map
+      contentType: application/json
+  getContact:
+    help: Get contact from hubspot.
+    http:
+      port: 3000
+      method: post
+      path: /getContact
+      contentType: application/json
+    arguments:
+      vid: 
+        type: string
+        in: requestBody
+        required: true
+        help: Provide contact vid to get contact details.
+    output:
+      type: map
+      contentType: application/json
+  deleteContact:
+    help: Delete contact from hubspot.
+    http:
+      port: 3000
+      method: post
+      path: /deleteContact
+      contentType: application/json
+    arguments:
+      vid: 
+        type: string
+        in: requestBody
+        required: true
+        help: Provide vid of the contact to delete.
+    output:
+      type: map
+      contentType: application/json
+  createDeal:
+    help: Create new deal in hubspot.
+    http:
+      port: 3000
+      method: post
+      path: /createDeal
+      contentType: application/json
+    arguments:
+      properties: 
+        type: map
+        in: requestBody
+        required: true
+        help: Provide all deal properties in map type.
+    output:
+      type: map
+      contentType: application/json
+  createTicket:
+    help: Create new ticket in hubspot.
+    http:
+      port: 3000
+      method: post
+      path: /createTicket
+      contentType: application/json
+    arguments:
+      ticketProperties: 
+        type: list
+        in: requestBody
+        required: true
+        help: List all the ticket properties in key/value pair json format (properties are subject, content, hs_pipeline, hs_pipeline_stage).
+    output:
+      type: map
+      contentType: application/json
+environment:
+  API_KEY:
+    type: string
+    required: true
+    help: API Key of hubspot.
