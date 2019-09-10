@@ -92,13 +92,13 @@ func DeleteContactByVID(responseWriter http.ResponseWriter, request *http.Reques
 		fmt.Println(err)
 	}
 	// Fetch Request
-	resp1, err := client.Do(resp)
+	deleteResp, err := client.Do(resp)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	defer resp1.Body.Close()
-	body, err := ioutil.ReadAll(resp1.Body)
+	defer deleteResp.Body.Close()
+	body, err := ioutil.ReadAll(deleteResp.Body)
 	if err == nil {
 		fmt.Println(err)
 	}
